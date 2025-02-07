@@ -1,6 +1,7 @@
 import "./styles.css"
-import { pageLoad } from "./pageload";
+import { homePageLoad } from "./pageload";
 
-pageLoad();
+const contentDiv = document.querySelector("#content");
+homePageLoad(contentDiv);
 
 console.log("test");
