@@ -3,7 +3,6 @@ import { homePageLoad } from "./pageload";
 import { menuLoad } from "./menu";
 import { aboutPageLoad } from "./about";
 
-const contentDiv = document.querySelector("#content");
 const navButtons = document.querySelectorAll("button");
 
 navButtons.forEach(button => {
@@ -12,16 +11,33 @@ navButtons.forEach(button => {
 
 function pageLoadFunc(btn) {
     if (btn === navButtons[0]) {
-       return homePageLoad(contentDiv);
+        contentDivCheck();
+        homePageLoad();
     } else
     if (btn === navButtons[1]) {
-        return menuLoad(contentDiv);
+        contentDivCheck();
+        menuLoad();
     } else 
     if (btn === navButtons[2]) {
-        return aboutPageLoad(contentDiv);
+        contentDivCheck();
+        aboutPageLoad();
     }
 };
 
-homePageLoad(contentDiv);
+function contentDivCheck() {
+    const contentDiv = document.querySelector("#content");
+    const divContent = document.querySelector(".divContent");
+    const footer = document.querySelector("footer");
+    const footerText = document.querySelector(".footerText");
+
+    if(divContent && footerText) {
+        contentDiv.removeChild(divContent);
+        footer.removeChild(footerText);
+    } else if(divContent) {
+        contentDiv.removeChild(divContent);
+    }
+}
+
+homePageLoad();
 
 console.log("test");

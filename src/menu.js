@@ -1,5 +1,7 @@
-function menuLoad(div) {
+function menuLoad() {
+    const contentDiv = document.querySelector("#content");
     const divContent = document.createElement('div');
+    divContent.classList.add('divContent');
 
     const menuList = document.createElement('ul');
     const listItem1 = document.createElement('li');
@@ -15,7 +17,7 @@ function menuLoad(div) {
     menuList.appendChild(listItem3);
 
     divContent.appendChild(menuList);
-    div.appendChild(divContent);
+    contentDiv.appendChild(divContent);
 }
 
 export { menuLoad }

@@ -1,6 +1,7 @@
-function homePageLoad(div) {
-
+function homePageLoad() {
+    const contentDiv = document.querySelector("#content");
     const divContent = document.createElement('div');
+    divContent.classList.add('divContent');
     const footer = document.querySelector("footer");
     
     //create, append image
@@ -21,10 +22,11 @@ function homePageLoad(div) {
     divContent.appendChild(subHeading);
     
     //append all to contentDiv
-    div.appendChild(divContent);
+    contentDiv.appendChild(divContent);
 
     //create, append footer content
     const footerText = document.createElement('p');
+    footerText.classList.add("footerText");
     const imageSpan = document.createElement('span');
     imageSpan.textContent = "Image: ";
     imageSpan.style.fontWeight = 'bold';
