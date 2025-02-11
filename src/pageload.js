@@ -1,6 +1,8 @@
 function homePageLoad(div) {
-    const footer = document.querySelector("footer");
+
     const divContent = document.createElement('div');
+    const footer = document.querySelector("footer");
+    
     //create, append image
     const image = document.createElement('img');
     image.id = 'homeImage';

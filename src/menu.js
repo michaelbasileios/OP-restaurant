@@ -1,10 +1,21 @@
 function menuLoad(div) {
-    // div.innerHTML = '';
-    div.innerHTML = `<ul>
-                        <li>Beer</li>
-                        <li>Bear Steak</li>
-                        <li>Moss</li>
-                     </ul>`;
+    const divContent = document.createElement('div');
+
+    const menuList = document.createElement('ul');
+    const listItem1 = document.createElement('li');
+    const listItem2 = document.createElement('li');
+    const listItem3 = document.createElement('li');
+
+    listItem1.textContent = "Beer";
+    listItem2.textContent = "Steak";
+    listItem3.textContent = "Drumsticks";
+
+    menuList.appendChild(listItem1);
+    menuList.appendChild(listItem2);
+    menuList.appendChild(listItem3);
+
+    divContent.appendChild(menuList);
+    div.appendChild(divContent);
 }
 
 export { menuLoad }
